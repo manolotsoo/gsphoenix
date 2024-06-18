@@ -18,6 +18,7 @@ defmodule GsphoenixWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    resources "/tasks", TaskController #updated
   end
 
   # Other scopes may use custom stacks.
