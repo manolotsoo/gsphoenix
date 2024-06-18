@@ -1,3 +1,5 @@
+require IEx
+
 defmodule GsphoenixWeb.TaskController do
   use GsphoenixWeb, :controller
 
@@ -6,6 +8,7 @@ defmodule GsphoenixWeb.TaskController do
 
   def index(conn, _params) do
     tasks = Todo.list_tasks()
+    IEx.pry
     render(conn, :index, tasks: tasks)
   end
 
