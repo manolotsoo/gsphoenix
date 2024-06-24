@@ -1,3 +1,5 @@
+# require IEx
+
 defmodule GsphoenixWeb.UserRegistrationLive do
   use GsphoenixWeb, :live_view
 
@@ -43,7 +45,12 @@ defmodule GsphoenixWeb.UserRegistrationLive do
   end
 
   def mount(_params, _session, socket) do
+    IO.puts("mounts\n")
+    IO.inspect(@form)
     changeset = Accounts.change_user_registration(%User{})
+    # IEx.pry()
+    # IO.puts("inspect\n")
+    # IO.inspect(changeset)
 
     socket =
       socket

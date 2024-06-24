@@ -8,8 +8,12 @@
 </.header>
 
 <.table id="tasks" rows={@tasks} row_click={&JS.navigate(~p"/tasks/#{&1}")}>
-  <:col :let={task} label="Name"><%= task.name %></:col>
-  <:col :let={task} label="Completed"><%= task.completed %></:col>
+  <:col :let={task} label="Name">
+    <%= task.name %>
+  </:col>
+  <:col :let={task} label="Completed">
+    <%= task.completed %>
+  </:col>
   <:action :let={task}>
     <div class="sr-only">
       <.link navigate={~p"/tasks/#{task}"}>Show</.link>

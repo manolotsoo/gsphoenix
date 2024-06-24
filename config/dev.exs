@@ -4,7 +4,7 @@ import Config
 config :gsphoenix, Gsphoenix.Repo,
   username: "root",
   password: "root",
-  hostname: "localhost",
+  hostname: "172.20.0.2",
   database: "gsphoenix_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,

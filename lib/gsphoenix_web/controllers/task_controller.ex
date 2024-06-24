@@ -6,12 +6,13 @@ defmodule GsphoenixWeb.TaskController do
   alias Gsphoenix.Todo
   alias Gsphoenix.Todo.Task
 
+  # listing
   def index(conn, _params) do
     tasks = Todo.list_tasks()
-    IEx.pry
     render(conn, :index, tasks: tasks)
   end
 
+  # 
   def new(conn, _params) do
     changeset = Todo.change_task(%Task{})
     render(conn, :new, changeset: changeset)
@@ -31,6 +32,7 @@ defmodule GsphoenixWeb.TaskController do
 
   def show(conn, %{"id" => id}) do
     task = Todo.get_task!(id)
+    IEx.pry()
     render(conn, :show, task: task)
   end
 
