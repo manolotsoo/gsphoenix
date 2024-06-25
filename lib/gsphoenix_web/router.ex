@@ -50,7 +50,7 @@ defmodule GsphoenixWeb.Router do
 
   scope "/", GsphoenixWeb do
     pipe_through [:browser, :redirect_if_user_is_authenticated]
-
+    live "/articles", ArticleLive, :index
     live_session :redirect_if_user_is_authenticated,
       on_mount: [{GsphoenixWeb.UserAuth, :redirect_if_user_is_authenticated}] do
       live "/users/register", UserRegistrationLive, :new
