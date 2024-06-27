@@ -1,4 +1,6 @@
 <div>
   <h1>Articles</h1>
+  <.live_component module={GsphoenixWeb.ArticleFormComponent} id="article_input" article={@article}
+    changeset={@changeset} />
   <.live_component module={GsphoenixWeb.ArticleListComponent} items={@articles} id="articles_list" />
 </div>
